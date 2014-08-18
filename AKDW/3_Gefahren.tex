@@ -1,0 +1,31 @@
+%---------------------------------- 
+\section{Gefahren}
+%---------------------------------- 
+Die Gefahren, die durch XSS entstehen, sind vielfältig. Ist das Einschleusen von Schadcode 
+erfolgreich, steht i.d.R. das gesamte Funktionsspektrum der jeweiligen Script-Sprache zur Veerügung, 
+das für einen Angriff genutzt werden kann. Nachfolgend aufgelistet finden sich
+lediglich einige wenige Angriffsszenarien, die sich mit Hilfe von XSS umsetzen lassen.
+
+%---------------------------------- 
+\subsection{Cookie Harvesting}
+%---------------------------------- 
+Dadurch, dass das Script Clientseitig ausgeführt wird, ist es möglich auf die lokalen 
+Dateien zuzugreifen und diese zu kopieren und über das Netzwerk (ggf. Internet) zu übertragen. 
+Auf diese Art und Weise ist es möglich, durch ein Skript Cookies zu stehlen. Die Cookies werden 
+hierbei an den Angreifer übertragen und dieser erhält somit im schlechtesten Fall alle aktiven 
+Logins des Opfers.
+%---------------------------------- 
+\subsection{Informationsdiebstahl}
+%---------------------------------- 
+Die Erzeugung eines Eingabefensters kann dafür genutzt werden, (vertrauliche) Information vom 
+Opfer zu bekommen. Ein Angriffsszenario hierbei ist das Abfragen der Login-Daten mit dem Hinweis, 
+dass die Session abgelaufen ist und man sich erneut anmelden müsse.  
+%---------------------------------- 
+\subsection{Key-Logger}
+%----------------------------------
+Es ist möglich mit Hilfe eines Scripts die Eingabe der Tastatur zu loggen und an den Angreifer zu übertragen. 
+Auf diese Weise können Zugangsdaten abgegriffen werden.
+%---------------------------------- 
+\subsection{Weiteres Beispiel}
+%----------------------------------
+Hier könnte noch ein Beispiel kommen\ldots
