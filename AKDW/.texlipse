@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Aug 18 13:35:09 CEST 2014
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=lniguide.tex
+outputFile=document.pdf
+langSpell=de
+markDer=true
+srcDir=
