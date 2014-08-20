@@ -3,7 +3,9 @@
 %  wurde.
 %  (Verweis auf Eintrag: \cite{KEY}, Verweis mit Seitenzahl: \cite[2--4]{KEY}
 % http://de.wikibooks.org/wiki/LaTeX-Kompendium:_Zitieren_mit_BibTeX
+% http://www.andy-roberts.net/res/writing/latex/bibentries.pdf
 
+% Beispiele
 % Buch
 @Book{Example01,
     Title       = {Buchtitel},
@@ -31,4 +33,65 @@
     Year        = {1992},
     Url         = {http://www.example.de/},
     Note        = {Abgerufen am 20.08.2014}
+}
+% ---
+
+@Book{Sny06,
+    Title       = {Pro PHP Security},
+    Author      = {Snyder, Chris and Southwell, Michael},
+    Publisher   = {Apress},
+    Address     = {New York},
+    Year        = {2006},
+    
+    Isbn        = {978-1-430-23318-3},
+}
+
+@Conference{GANA07,
+    Title       = {Prevention of Cross-Site Scripting Attacks on Current Web Applications},
+    Author      = {Joaquin Garcia-Alfaro and Guillermo Navarro-Arribas},
+    Pages       = {1770 -- 1784},
+    
+    Booktitle   = {On the move to meaningful internet systems 2007: CoopIS, DOA, ODBASE, GADA, and IS - Part II},
+    Editor      = {Meersman, Robert and Tari, Zahir},
+    Organization = {OTM Confederated International Conferences},
+    Publisher   = {Springer},
+    Address     = {Berlin, Heidelberg},
+    Year        = {2007},
+    
+    Isbn        = {978-3-540-76843-2},
+}
+
+@Proceedings{Til11,
+    Title       = {Encyclopedia of Cryptography and Security},
+    Editor      = {Tilborg, Henk C.A. van and Jajodia, Sushil},
+    Publisher   = {Springer Science and Business Media},
+    Address     = {Berlin Heidelberg},
+    Year        = {2011},
+    
+    Isbn        = {978-1-441-95906-5},
+}
+
+@Inproceedings{Kir11,
+    Title       = {Cross Site Scripting Attacks},
+    Author      = {Engin Kirda},
+    Pages       = {275 -- 277},
+    Crossref    = {Til11}
+}
+
+@Electronic{Bac03,
+    Title       = {Cross-Site-Scripting: Datenklau über Bande},
+    Author      = {Daniel Bachfeld},
+    Month       = {08},
+    Year        = {2003},
+    Url         = {http://www.heise.de/security/artikel/Cross-Site-Scripting-Datenklau-ueber-Bande-270244.html},
+    Note        = {Abgerufen am 20.08.2014}
+}
+
+@Article{Fox12,
+    Title       = {Cross Site Scripting (XSS)},
+    Author      = {Dirk Fox},
+    Journal     = {Datenschutz und Datensicherheit - DuD},
+    Year        = {2012},
+    
+    Volume      = {12}
 }
