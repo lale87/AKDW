@@ -7,32 +7,35 @@ Websitebetreiber stammt. Du Funktionsweise, wie die
 Ausführung des Skripts hervorgerufen werden kann, ist vielfältig.
 Das Bundesamt für Sicherheit in der Informationstechnik 
 klassifiziert diese unterschiedlichen Funktionsweisen in 3 Bereiche.
-%---------------------------------- 
-\subsection{Persistent}
-%---------------------------------- 
-Beim persistenten XSS wird das Script durch den Angreifer auf einen Webserver
-übertragen und dort persistiert. Durch diese dauerhafte Speicherung des Schadcodes 
-wird das Script bei jedem Seitenaufruf direkt von dem Webserver an die Clients 
-ausgeliefert. Ein gutes Beispiel hierfür ist das Übertragen von Schadcode in Foren. 
-Durch das Einbinden von Scripten in Kommentare, wird dieses auf den Server übertragen 
-von dort an jeden Leser wieder ausgeliefert. Es Bedarf also keiner aktiven Tätigkeit 
-durch den Anwender mit Ausnahme des Besuchs der vermeintlich sicheren Seite.
-%---------------------------------- 
-\subsection{Reflektiert}
-%---------------------------------- 
-Das reflektierte XSS nutzt die Manipulation von GET-Paramtern, um das Script zur
-Ausführung zu bringen. Der GET-Paramater wird um Script-Elemente erweitert und beim 
-Absenden an den Server auf diesen übertragen. Das Script bleibt in diesem fall allerdings 
-nicht dauerhaft auf dem Server erhalten. Betroffen ist als nur der Anwender, der diesen 
-manipulierten GET-Parameter mit der Url absendet. Durch das Senden dieses manipulierten 
-Requests kommt es zu einer Auslieferung des ausführbaren Scripts an den Anwender.  
-Um nun einen Anwender dazu zu bringen, diesen manipulierten Request zu senden, versucht 
-der Angreifer i.d.R. einen manipulierten Link zu verteilen, der diesen Parameter enthält. 
-%---------------------------------- 
-\subsection{DOM-Basiert (lokal)}
-%----------------------------------
-Wie auch beim reflektierten XSS wird beim DOM-Basierten XSS ein Parameter in der
- Url genutzt, um ein Script beim Anwender zur Ausführung zu bringen. Im Gegensatz zum 
- reflektierten XSS wird das Script allerdings nicht an den Server gesendet, sondern direkt 
- beim Anwender ausgeführt, es findet also nur lokal statt. Der Angriff erfolgt i.d.R. 
- ebenfalls über einen manipulierten Link.
+\input{2_1_Persistent}
+\input{2_2_Reflektiert}
+\input{2_3_Dom}
+% %---------------------------------- 
+% \subsection{Persistent}
+% %---------------------------------- 
+% Beim persistenten XSS wird das Script durch den Angreifer auf einen Webserver
+% übertragen und dort persistiert. Durch diese dauerhafte Speicherung des Schadcodes 
+% wird das Script bei jedem Seitenaufruf direkt von dem Webserver an die Clients 
+% ausgeliefert. Ein gutes Beispiel hierfür ist das Übertragen von Schadcode in Foren. 
+% Durch das Einbinden von Scripten in Kommentare, wird dieses auf den Server übertragen 
+% von dort an jeden Leser wieder ausgeliefert. Es Bedarf also keiner aktiven Tätigkeit 
+% durch den Anwender mit Ausnahme des Besuchs der vermeintlich sicheren Seite.
+% %---------------------------------- 
+% \subsection{Reflektiert}
+% %---------------------------------- 
+% Das reflektierte XSS nutzt die Manipulation von GET-Paramtern, um das Script zur
+% Ausführung zu bringen. Der GET-Paramater wird um Script-Elemente erweitert und beim 
+% Absenden an den Server auf diesen übertragen. Das Script bleibt in diesem fall allerdings 
+% nicht dauerhaft auf dem Server erhalten. Betroffen ist als nur der Anwender, der diesen 
+% manipulierten GET-Parameter mit der Url absendet. Durch das Senden dieses manipulierten 
+% Requests kommt es zu einer Auslieferung des ausführbaren Scripts an den Anwender.  
+% Um nun einen Anwender dazu zu bringen, diesen manipulierten Request zu senden, versucht 
+% der Angreifer i.d.R. einen manipulierten Link zu verteilen, der diesen Parameter enthält. 
+% %---------------------------------- 
+% \subsection{DOM-Basiert (lokal)}
+% %----------------------------------
+% Wie auch beim reflektierten XSS wird beim DOM-Basierten XSS ein Parameter in der
+%  Url genutzt, um ein Script beim Anwender zur Ausführung zu bringen. Im Gegensatz zum 
+%  reflektierten XSS wird das Script allerdings nicht an den Server gesendet, sondern direkt 
+%  beim Anwender ausgeführt, es findet also nur lokal statt. Der Angriff erfolgt i.d.R. 
+%  ebenfalls über einen manipulierten Link.

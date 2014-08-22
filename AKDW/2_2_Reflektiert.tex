@@ -1,0 +1,11 @@
+%---------------------------------- 
+\subsection{Reflektiert}
+%---------------------------------- 
+Das reflektierte XSS nutzt die Manipulation von GET-Paramtern, um das Script zur
+Ausführung zu bringen. Der GET-Paramater wird um Script-Elemente erweitert und beim 
+Absenden an den Server auf diesen übertragen. Das Script bleibt in diesem fall allerdings 
+nicht dauerhaft auf dem Server erhalten. Betroffen ist als nur der Anwender, der diesen 
+manipulierten GET-Parameter mit der Url absendet. Durch das Senden dieses manipulierten 
+Requests kommt es zu einer Auslieferung des ausführbaren Scripts an den Anwender.  
+Um nun einen Anwender dazu zu bringen, diesen manipulierten Request zu senden, versucht 
+der Angreifer i.d.R. einen manipulierten Link zu verteilen, der diesen Parameter enthält.
