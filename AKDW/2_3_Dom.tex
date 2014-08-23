@@ -1,8 +1,8 @@
 %---------------------------------- 
 \subsection{DOM-Basiert (lokal)}
 %----------------------------------
-Wie auch beim reflektierten XSS wird beim DOM-Basierten XSS ein Parameter in der
- Url genutzt, um ein Script beim Anwender zur Ausführung zu bringen. Im Gegensatz zum 
- reflektierten XSS wird das Script allerdings nicht an den Server gesendet, sondern direkt 
- beim Anwender ausgeführt, es findet also nur lokal statt. Der Angriff erfolgt i.d.R. 
- ebenfalls über einen manipulierten Link.
+Beim DOM-Basierten Cross-Site-Scripting ist kein Webserver direkt beim Angriff
+beteiligt. Bei dieser Methode wird sich die Tatsache zur Nutze gemacht, dass das
+JavaScript einer Seite einen Parameter der Url benutzt, um diesen zur Anzeige zu
+bringen. Der Angriff hierbei erfolgt durch manipulierte Links, die den Schadcode
+in der Url als Parameter enthalten. 
