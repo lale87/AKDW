@@ -1,6 +1,31 @@
 %---------------------------------- 
-\subsection{Serverseitig}
+\subsection{Schutzmaßnahmen -- Server}
 %---------------------------------- 
-Was kann man server-seitig tun?
-Eingaben filtern
-Whitelists statt Blacklists verwenden
+% Nutzereingaben prüfen
+Im Allgemeinen treten XSS-Lücken nur bei nicht ausreichend validierten
+Benutzereingaben auf, die zur Aufbereitung dynamischer Webseiten genutzt werden.
+Die Überprüfung aller Benutzereingaben direkt vor der Generierung einer Seite
+spielt also eine wichtige Rolle. Dieser Vorgang ist jedoch nicht trivial. Durch
+viele verschiedene Einbindungsmöglichkeiten für Skripte ..\\
+% Filter-Proxy
+Eine weitere Möglichkeit stellen zentrale Filter-Proxies dar. Diese scannen
+ein- und ausgehende Datenströme auf entsprechenden Schadcode anhand von
+Heuristiken.
+% Policies
+Eine relative junge Entwicklung ist das Vereinbaren von Policies mit dem
+Browser. Zu jeder Webseite wird über eine gesicherte Verbindung eine Art Vertrag
+ausgetauscht. Dieser beschreibt, welche Aktionen für bestimmte Skriptquellen
+erlaubt sind. So lässt sich das Nachladen von externen Skripten unterbinden und
+nicht benötigte Funktionen deaktivieren. Dieses Verfahren muss jedoch vom
+Browser auf dem Client umgesetzt werden.\\
+% TODO: Umsetzung? Verbreitung?
+% Problem & DOM-XSS
+Trotz aller Schutzmaßnahmen gibt es ein Grundproblem: Der Angreifer braucht nur
+eine Lücke im Schutzsystem zu finden, während der Webseitenbetreiber aller
+Möglichkeiten berücksichtigen muss.\\
+% Ganzheitlicher Ansatz / sichere Architektur
+Allgemein gilt es deswegen einen ganzheitlichen, auf Sicherheit ausgelegten
+Ansatz zu fahren und die Anwendung gezielt gegen Angriffe zu designen. Hierbei
+hilft der Einsatz von Frameworks sehr, da hier die meisten bekannten XSS-Lücken
+berücksichtigt werden.
+% TODO: Apache?

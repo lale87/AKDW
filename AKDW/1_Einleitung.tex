@@ -1,7 +1,23 @@
 \section{Einleitung}
-Jeder Teilnehmer im Internet setzt sich den Gefahren potenzieller Angriffe aus.
-Angriffsziele sind die Betreiber in Webseiten in Form von Webservern oder auch
-einzelne Clients. Eine besondere Angriffsart ist das Cross-Site-Scripting,
-welches sich Server zu Nutze macht, um indirekt Clients anzugreifen. Das
-Grundprinzip des Cross-Site-Scripting beruht darauf, schädliche Script-Routinen
-an Clients auszuliefern, die dann clientseitig ausgeführt werden.
+Cross-Site-Scripting, auch als XSS bekannt, beruht darauf, dass eine dynamisch
+generierte Webseite Benutzereingaben nicht korrekt validiert und darstellt.
+Der Angreifer versucht auf diese Weise ein eigenes Skript in die Webseite
+einzubinden, welches beim Anwender ausgeführt wird. Da dieses nun im Kontext
+einer vermeintlich sicheren Webseite ausgeführt wird, kann der Angreifer
+meistens auf sensible Daten der Webanwendung zugreifen \cite[1771]{GANA07}.\\
+% Definition
+Das Bundesamt für Sicherheit in der Informationstechnik definiert XSS
+folgendermaßen:\\
+\enquote{Cross-Site Scripting-Angriffe
+(XSS-Angriffe) richten sich gegen die Benutzer einer Webanwendung und deren
+Clients. Hierbei versucht ein Angreifer indirekt Schadcode (in der Regel
+Browser-seitig ausführbare Skripte, wie z. B. JavaScript) an den Client des
+Benutzers der Webanwendung zu senden.} \cite{fSidI13}\\
+% Ziel und Abgrenzung
+Ziel eines solchen Angriffs, in Abgrenzung zur SQL-Injection, ist nicht die
+Webanwendung selbst, sondern der Anwender \cite{Fox12}. In diesem Papier wird
+als Beispiel JavaScript herangezogen, welches am weitesten verbreitet ist im
+Bereich der XSS-Angriffe. Zu beachten ist jedoch, dass Grundsätzlich jede vom
+Browser ausführbare Scriptsprache (Flash, ActiveScript, etc.) genutzt werden
+kann.
+\\
