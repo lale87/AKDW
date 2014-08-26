@@ -2,30 +2,25 @@
 \subsection{Schutzmaßnahmen -- Server}
 %---------------------------------- 
 % Nutzereingaben prüfen
-Im Allgemeinen treten XSS-Lücken nur bei nicht ausreichend validierten
+Im Allgemeinen treten XSS-Lücken bei nicht ausreichend validierten
 Benutzereingaben auf, die zur Aufbereitung dynamischer Webseiten genutzt werden.
 Die Überprüfung aller Benutzereingaben direkt vor der Generierung einer Seite
-spielt also eine wichtige Rolle. Dieser Vorgang ist jedoch nicht trivial. Durch
-viele verschiedene Einbindungsmöglichkeiten für Skripte ..\\
+spielt also eine wichtige Rolle. Aufgrund ihrer Funktionsweise lassen sich keine
+Eingaben durch DOM-basiertes XSS serverseitig überprüfen.
 % Filter-Proxy
-Eine weitere Möglichkeit stellen zentrale Filter-Proxies dar. Diese scannen
-ein- und ausgehende Datenströme auf entsprechenden Schadcode anhand von
-Heuristiken.
-% Policies
-Eine relative junge Entwicklung ist das Vereinbaren von Policies mit dem
-Browser. Zu jeder Webseite wird über eine gesicherte Verbindung eine Art Vertrag
-ausgetauscht. Dieser beschreibt, welche Aktionen für bestimmte Skriptquellen
-erlaubt sind. So lässt sich das Nachladen von externen Skripten unterbinden und
-nicht benötigte Funktionen deaktivieren. Dieses Verfahren muss jedoch vom
-Browser auf dem Client umgesetzt werden.\\
-% TODO: Umsetzung? Verbreitung?
+Eine zentrale Möglichkeit stellen Filter-Proxies dar. Diese scannen ein- und
+ausgehende Datenströme auf entsprechenden Schadcode anhand von Heuristiken
+\cite[1776ff.]{GANA07} \cite{Fox12}.
 % Problem & DOM-XSS
-Trotz aller Schutzmaßnahmen gibt es ein Grundproblem: Der Angreifer braucht nur
-eine Lücke im Schutzsystem zu finden, während der Webseitenbetreiber aller
-Möglichkeiten berücksichtigen muss.\\
-% Ganzheitlicher Ansatz / sichere Architektur
-Allgemein gilt es deswegen einen ganzheitlichen, auf Sicherheit ausgelegten
-Ansatz zu fahren und die Anwendung gezielt gegen Angriffe zu designen. Hierbei
-hilft der Einsatz von Frameworks sehr, da hier die meisten bekannten XSS-Lücken
-berücksichtigt werden.
-% TODO: Apache?
+Grundproblem dieser Maßnahmen ist, dass der Angreifer nur eine Lücke im
+Schutzsystem finden muss, während der Betreiber alle Möglichkeiten zu
+berücksichtigen hat.\\
+% Content-Security-Policy
+Eine relative junge Entwicklung ist das setzen des
+Content-Security-Policy-Headers (CSP). Dieser wird mittlerweile von allen
+gängigen Browsern unterstützt und kann XSS-Angriffe effektiv verhindern. In
+diesem Header lassen sich vertrauenswürdige Ort von Inhalten festlegen. Indem
+eigene Skripte vollständig in externe Dateien ausgelagert werden, lassen sich
+Inline-Skripte komplett verbieten und nachgeladene Skripte auf Orte der eigenen
+Domain beschränken. Umsetzen muss die Regeln der Browser des Anwenders
+\cite{SB12} \cite[1780ff.]{GANA07}.
