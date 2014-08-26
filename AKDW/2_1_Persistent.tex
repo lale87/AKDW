@@ -1,13 +1,16 @@
 %---------------------------------- 
 \subsection{Persistent}
 %---------------------------------- 
-Persistentes Cross-Site-Scripting beschreibt die Methode, Schadcode in Form
-einer Script-Routine an einen Webserver zu übertragen und dort dauerhaft zu
-speichern. Das häufigste Angriffsszenario hierbei ist das Hinterlegen der
-Script-Routine innerhalb eines Kommentars auf einer Website. 
-Der auf dem Webserver hinterlegte Schadcode wird nun zusätzlich zu dem
-ursprünglichen Inhalt der Website an alle Clients ausgeliefert, die diese
-Website besuchen.
-Sofern keine Maßnahmen vom Client getroffen werden, die Ausführung von
-Script-Routinen zu unterbinden, wird der Schadcode vom Browser interpretiert und
-ausgeführt. 
+Persistentes XSS zielt darauf ab, Schadcode in Form einer Scruipt-Routine
+dauerhaft auf einem Webserver zu speichern, sodass der Schadcode an jeden Nutzer
+ausgeliefert wird, der die Infizierte Seite besucht.
+Um den Schadcode auf den Server zu übertragen werden Schnittstellen benutzt, die
+es einem Nutzer erlauben, eigene Eingaben an einen Server zu senden, die in der
+späteren Darstelleung einer Webseite genutzt werden. Der hier eingebene Text,
+wie er z.B. in Diskussionforen häufig vorkommt, kann neben dem eigentlichen Text
+um Script-Elemente erweitert werden, die dem Text angehängt werden.
+Werden die übertragenen Eingabedaten nicht gefiltert, so wird der Schadcode
+dauerhaft in die Seite eingebettet.
+Jeder Besucher der so infizierten Webseite bekommt vom vermeintlich sicheren
+Server nun den Schadcode ausgeliefert, der vom Browser des Nutzers interprätiert
+und ausgeführt wird, sofern dies nicht speziell vom Client unterbunden wird.
