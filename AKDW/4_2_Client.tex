@@ -1,20 +1,42 @@
 %---------------------------------- 
 \subsection{Schutzmaßnahmen -- Client}
 %---------------------------------- 
-Die Maßnahmen, die clientseitig getroffen werden können, um einen Angiff
-mittels Cross-Site-Scripting zu verhindern, beschränken sich primär auf
-Vorsichtsmaßnahmen und die Sicherheitseinstellungen im genutzten Browser.
-Die effektivste methode, um jegiche Art von Cross-Site-Scripting zu verhindern
-ist das Blocken sämlticher Scripte von Websiten. Die Problematik hierbei ist,
-dass damit auch sämtliche Scripte geblockt werden, die zur normalen Ausführung
-einer Website notwendig sein können; die Nutzung des Internets ist somit nur
-noch sehr eingeschränkt möglich. 
-Neben der Blockierung von Script-Routinen muss beim Aktivieren von Links darauf
-geachtet werde, welche Paramameter in der Url enthalten sind. Scripte-Elemente
-innerhalb einer Url sind ein Indiz für einen möglichen Agriff durch
-Cross-Site-Scripting.
-Darüber hinaus besteht die Möglichkeit, die die Netzweraktivitäten des Clients
-zu überwachen. Cross-Site-Scripting basierte Angriffe führen in der Regel zu
-ungewöhnlichen Netzwerkaktivitäten in Form von Datenaustausch mit unbekannten
-Netzwerkteilnehmern. Eine Identifikation solcher Aktivitäten ist aufgrund der
-hohen Kommunikationsrate in der Praxis eher unzuverlässig.
+Clientseitige Schutzmaßnahmen müssen im Idealfall nicht ergriffen werden, da
+alle Schwachstellen durch den Server ausgeliefert und dadurch auch durch diesen
+vermieden werden müssen. Selbst das DOM-Basierte XSS nutzt Schwachstellen in dem
+vom Server ausgelieferten Script, um einen Angriff durchzuführen.
+Schutzmaßnahmen können sowohl darauf abzielen, das Einbinden des Scripts oder
+auch das Ausführen des Scripts zu unterbinden. Das Einbinden von Schadcode lässt
+sich clientseitig nur bei refklektiertem und DOM-Basiertem XSS verhindern.
+Da die Angriffe hierbei durch eine manipulierte Url durchgeführt werden, lässt
+sich clientseitig die Url auf ungewöhnliche Script-Elemente überprüfen. Um die
+Anfälligkeit für manipulierte Links zu minimieren wird Häufig die Empfehlung
+gegeben, Links nur von bekannten und vertrauenswürdigen Seiten zu verwenden.
+Diese Empfehlung ist allerdings bei XSS nur bedingt gültig, da die angezeigten
+Links auf der vermeintlich vertrauenswürdigen Webseite durch persistentes XSS
+manipuliert sein können.
+Der effektivste Schutzt gegen XSS ist clientseitig das Unterbinden von Script.
+Das Grundsätzliche Blocken aller Script-Routinen ist hierbei das sicherste
+Element im schutz gegen XSS. Da heutzutage allerdings viele Funktionaliäten im
+Internet durch Script-Routinen erst möglich werden, führt ein grundsätzliches
+Blocken der Inhalte dazu, dass viele Webseiten im Internet für die Nutzer nur
+noch sehr eingeschränkt nutzbar sind. Ein weitere Möglichkeit, ist das
+Unterbinden von In-Line JavaScript. Da der Schadcode direkt als Script-Element
+in die Webseite eingebettet werden\ldots
+
+%---------------------------
+% Die Maßnahmen, die clientseitig getroffen werden können, um einen Angiff mittels Cross-Site-Scripting zu verhindern, beschränken sich primär auf Vorsichtsmaßnahmen und die Sicherheitseinstellungen im genutzten Browser.
+% Die effektivste methode, um jegiche Art von Cross-Site-Scripting zu verhindern
+% ist das Blocken sämlticher Scripte von Websiten. Die Problematik hierbei ist,
+% dass damit auch sämtliche Scripte geblockt werden, die zur normalen Ausführung
+% einer Website notwendig sein können; die Nutzung des Internets ist somit nur
+% noch sehr eingeschränkt möglich. 
+% Neben der Blockierung von Script-Routinen muss beim Aktivieren von Links darauf
+% geachtet werde, welche Paramameter in der Url enthalten sind. Scripte-Elemente
+% innerhalb einer Url sind ein Indiz für einen möglichen Agriff durch
+% Cross-Site-Scripting.
+% Darüber hinaus besteht die Möglichkeit, die die Netzweraktivitäten des Clients
+% zu überwachen. Cross-Site-Scripting basierte Angriffe führen in der Regel zu
+% ungewöhnlichen Netzwerkaktivitäten in Form von Datenaustausch mit unbekannten
+% Netzwerkteilnehmern. Eine Identifikation solcher Aktivitäten ist aufgrund der
+% hohen Kommunikationsrate in der Praxis eher unzuverlässig.
