@@ -2,27 +2,29 @@
 \subsection{Reflektiert}
 %---------------------------------- 
 % Allgemeine Beschreibung
-Reflektiertes XSS nutzt an die URL angehängte Parameter zur Einbettung
-schädlicher Skripte. Im Gegensatz zu POST-Parametern, welche im Hintergrund
-übertragen werden, hängen GET-Parameter direkt an der aufgerufenen URL. Durch
-diese ist es möglich direkt auf dynamische Webseiten zu verlinken (z. B.
+Reflektiertes XSS nutzt die URL zur Einbettung schädlicher Skripte
+\cite[1773]{GANA07}. In den meisten Fällen werden hierbei die GET-Parameter
+genutzt. Im Gegensatz zu POST-Parametern, welche im Hintergrund übertragen
+werden, hängen GET-Parameter direkt an der aufgerufenen URL \cite[56]{SH06}.
+Durch diese ist es möglich direkt auf dynamische Webseiten zu verlinken (z. B.
 einen bestimmten Artikel im Webshop). Der Aufruf einer URL mit GET-Parametern
 ist weit verbreitet und sieht folgendermaßen aus:\\
 \texttt{http://www.webshop.de/show\_article.php\textbf{?productid=4711}}\\
 Hierbei wird die dynamische Seite \textit{show\_article.php} mit dem Parameter
 \textit{productid=4711} aufgerufen. 
 % Vorgehen
-Problematisch wird es, wenn manipulierte Parameter zur Aufbereitung einer
-Webseite genutzt werden. Ein Angreifer kann so Einfluss auf die Aufbereitung
-einer Webseite beim Anwender nehmen, indem er eine entsprechend manipulierte URL
-bereitstellt. So wird beispielsweise oft bei Fehlermeldungen, wenn eine Seite
-nicht aufgerufen werden konnte, die URL im Text angezeigt. Durch integrieren
-eines \texttt{<script>}-Blocks in der URL lassen sich externe Scripte einbinden
-und beim aufrufenden Client ausführen. Der Angreifer muss nun nur noch das Opfer
-dazu bewegen diese manipulierte URL zu öffnen.
+Problematisch wird es, wenn manipulierte Parameter oder Teile der URL selbst zur
+Aufbereitung der Webseite genutzt werden. Ein Angreifer kann so Einfluss auf die
+Aufbereitung einer Webseite beim Anwender nehmen, indem er eine entsprechend
+manipulierte URL bereitstellt \cite{Fox12}. So wird beispielsweise oft bei
+Fehlermeldungen, wenn eine Seite nicht aufgerufen werden konnte, die URL im Text
+angezeigt. Durch die Integration eines \texttt{<script>}-Blocks in die URL
+lassen sich externe Scripte einbinden und im aufrufenden Browser ausführen. Der
+Angreifer muss nun nur noch das Opfer dazu bewegen diese manipulierte URL zu
+öffnen.
 % Vom Server "reflektiert"
 Da der Server beim Aufruf der manipulierten URL die Möglichkeit hat die
 angehängten Parameter auf schädliche Werte zu überprüfen und selbst an den
 Client ausliefert, ist diese Art als reflektiertes XSS bekannt. Im Gegensatz zum
 persistenten XSS liefert der Server die schadhaften Scripte nur beim Aufruf der
-entsprechenden manipulierten URL aus.
+entsprechenden manipulierten URL aus \cite[276]{Kir11}.
