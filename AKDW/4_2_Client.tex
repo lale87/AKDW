@@ -7,19 +7,19 @@ Schwachstellen serverseitig berücksichtigt werden können (DOM-Basiertes XSS).
 Schutzmaßnahmen kön\-nen darauf abzielen, das Einbinden oder auch das Ausführen
 eines Skripts zu unterbinden.
 %Skripte nicht einbinden 
-Das Einbinden von Schadcode lässt sich clientseitig nur bei refklektiertem und
+Das Einbinden von Schadcode lässt sich clientseitig nur bei reflektiertem und
 DOM-Basiertem XSS verhindern, da bei persistentem XSS der Schadcode ohne
 Beteiligung des Clients zuvor eingebunden wurde \cite[1772ff]{GANA07}.
 Bei den erstgenannten Methoden wird er Angriff durch eine manipulierte URL
 durchgeführt, sodass diese clientseitig auf ungewöhnliche Skript-Elemente
 überprüft werden kann.
 %Skripte blocken
-Der effektivste Schutzt gegen XSS ist clientseitig das Unterbinden von Skripten.
+Der effektivste Schutz gegen XSS ist clientseitig das Unterbinden von Skripten.
 Da heutzutage allerdings viele Funktionalitäten im Internet durch
 Skript-Routinen erst möglich werden, führt ein grundsätzliches Blocken der
 Inhalte dazu, dass viele Webseiten im Internet für die Nutzer nur noch sehr
 eingeschränkt nutzbar sind \cite{Fox12}. Um Skripte nur selektiv zu unterbinden,
-gibt es Programme, die innerhalb des Browser Webseiten auf auffällige
+gibt es Programme, die innerhalb des Browsers Webseiten auf auffällige
 Skript-Routinen untersuchen und diese blockieren, wobei auch diese keinen
 hundertprozentigen Schutz bieten können, da das Angriffsspektrum zu groß ist
 \cite{Fox12}.
