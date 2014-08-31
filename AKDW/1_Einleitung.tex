@@ -8,15 +8,15 @@ meistens auf sensible Daten der Webanwendung zugreifen \cite[1771]{GANA07}.\\
 % Definition
 Das Bundesamt für Sicherheit in der Informationstechnik definiert XSS
 folgendermaßen:\\
-\enquote{Cross-Site Scripting-Angriffe
+\textit{\enquote{Cross-Site Scripting-Angriffe
 (XSS-Angriffe) richten sich gegen die Benutzer einer Webanwendung und deren
 Clients. Hierbei versucht ein Angreifer indirekt Schadcode (in der Regel
 Browser-seitig ausführbare Skripte, wie z. B. JavaScript) an den Client des
-Benutzers der Webanwendung zu senden.} \cite{fSidI13}\\
+Benutzers der Webanwendung zu senden.}} \cite{fSidI13}\\
 % Ziel und Abgrenzung
 Ziel eines solchen Angriffs, in Abgrenzung zur SQL-Injection, ist nicht die
 Webanwendung selbst, sondern der Anwender \cite{Fox12}. In diesem Papier wird
-als Beispiel JavaScript herangezogen, welches am weitesten verbreitet ist im
-Bereich der XSS-Angriffe. Zu beachten ist jedoch, dass Grundsätzlich jede vom
-Browser ausführbare Markup- oder Skriptsprache (HTML, CSS, Flash, ActiveX, etc.)
-genutzt werden kann.
+als Beispiel JavaScript herangezogen, welches bei XSS-Angriffen am häufigsten
+zum Einsatz kommt. Zu beachten ist jedoch, dass grundsätzlich jede vom Browser
+ausführbare Markup- oder Skriptsprache (HTML, CSS, Flash, ActiveX, etc.) genutzt
+werden kann.

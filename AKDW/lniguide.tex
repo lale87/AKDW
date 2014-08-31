@@ -4,8 +4,9 @@
 \IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
 
 \usepackage{graphicx}
-\usepackage[hyphens]{url}
 \usepackage[german=quotes]{csquotes}
+\usepackage{hyperref}
+\DeclareUrlCommand{\bfurl}{\def\UrlFont{\bfseries\ttfamily}}
 
 \title
 {Cross-Site-Scripting - Gefährdungspotenzial, Funktionsweise, Schutzmaßnahmen}
@@ -21,14 +22,12 @@
         Lars.Lembke@nordakademie.de}
         
 \begin{document}
-% TODO: Script vs. Skript -> Rechtschreibung vereinheitlichen
 \maketitle
 
 \begin{abstract}
 Das Internet birgt Gefahren für Betreiber von Webservern, aber auch für jeden
 einzelnen Teilnehmer. Die Angriffsszenarien hierbei sind vielfältig.
-Cross-Site-Scripting (XSS) ist ein Verfahren, dass es ermöglicht, mit Hilfe
-vermeintlich sicherer Webserver Anwender von Webanwendungen anzugreifen, indem
+Cross-Site-Scripting (XSS) ist ein Verfahren, dass es ermöglicht mit Hilfe
 schädliche Skript-Routinen vom Browser ausgeführt werden. Das Schadenspotential
 ist hierbei ist hoch, während ein erfolgreicher Schutz gegen
 Cross-Site-Scripting nur im Zusammenspiel von Browser und Servern möglich ist.
