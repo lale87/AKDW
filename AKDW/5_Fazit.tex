@@ -1,12 +1,24 @@
 %---------------------------------- 
 \section{Fazit}
 %---------------------------------- 
-% TODO: Fazit
-Cross-Site-Scripting ist ein häufig auftretendes Sicherheitsrisiko für Clients
-im Internet. Durch die Infektion eigentlich sicherer Webserver und die
-Ausführung des Schadcodes im Hintergrund sind Angriffe für einen Client nur sehr
-schwer zu bemerken.
-Die Angriffsmöglichkeiten sind vielfältig und können einen erheblichen Schaden
-verursachen. Um effektiv gegen Cross-Site-Scripting vorzugehen, müssen
-Vorkehrungen auf den Servern und auch auf den Clients getroffen werden.
-
+% Verbreitet
+Cross-Site-Scripting ist eine weit verbreitete Angriffsform im heutigen
+Internet.
+% Ziel: Anwender
+Während ein Großteil der Angriffsszenarien den Server in Visier hat, richtet
+sich XSS gegen den Anwender einer Webanwendung.
+% Drei Arten
+Funktional lassen sich XSS-Angriffe in drei verschiedene Arten einordnen:
+persistent, reflektiert und DOM-Basiert.
+% Großes Gefährdungspotential
+Besonders Webanwendungen mit sensiblen Daten (Online-Banking oder soziale
+Netzwerke) sind anfällig für XSS-Angriffe, da hier ein ein großer Schaden
+entstehen kann.
+% Schutzmaßnahmen Client- und Serverseitig
+Um diesem entgegen zu wirken müssen sowohl Server- als auch Clientseitig
+Maßnahmen ergriffen werden, welche die Auslieferung bzw. Ausführung von
+Schadcode verhindern.
+% CSP als Lösung
+Als besonders effektiv erweist sich der 2012 standardisierte
+Content-Security-Policy-Header (CSP), welcher festlegt, welche Skripte
+ausgeführt werden dürfen.
