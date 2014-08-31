@@ -1,21 +1,20 @@
 %---------------------------------- 
 \subsection{Schutzmaßnahmen -- Client}
 %---------------------------------- 
+%allgemein
 Clientseitige Schutzmaßnahmen müssen ergriffen werden, da nicht zwangsläufig
 alle Schwachstellen serverseitig behoben werden und dadurch an den Client
 ausgeliefert werden können. 
-% Alle Angriffe nutzen diese Schwachstellen aus, so
-% werden auch beim DOM-Basierte XSS die Schwachstellen in dem vom
-% Server ausgelieferten Script ausgenutzt, um einen Angriff durchzuführen.
-Schutzmaßnahmen können sowohl darauf abzielen, das Einbinden des Skripts oder
-auch das Ausführen des Skripts zu unterbinden. Das Einbinden von Schadcode lässt
-sich clientseitig nur bei refklektiertem und DOM-Basiertem XSS verhindern, da
-bei persistentem XSS der Schadcode ohne Beteiligung des Clients zuvor
+Schutzmaßnahmen können darauf abzielen, das Einbinden des Skripts oder
+auch das Ausführen des Skripts zu unterbinden.
+%Skripte nicht einbinden 
+Das Einbinden von Schadcode lässt sich clientseitig nur bei refklektiertem und
+DOM-Basiertem XSS verhindern, da bei persistentem XSS der Schadcode ohne Beteiligung des Clients zuvor
 eingebunden wurde \cite[1772ff]{GANA07}.
 Bei den erstgenannten Methoden wird er Angriff durch eine manipulierte Url
 durchgeführt, sodass diese clientseitig auf ungewöhnliche Skript-Elemente
 überprüft werden kann.
-
+%Skripte blocken
 Der effektivste Schutzt gegen XSS ist clientseitig das Unterbinden von Skript.
 Das grundsätzliche Blocken aller Skript-Routinen ist hierbei das sicherste
 Element im schutz gegen XSS. Da heutzutage allerdings viele Funktionaliäten im
@@ -23,21 +22,7 @@ Internet durch Skript-Routinen erst möglich werden, führt ein grundsätzliches
 Blocken der Inhalte dazu, dass viele Webseiten im Internet für die Nutzer nur
 noch sehr eingeschränkt nutzbar sind \cite{Fox12}. Um Skripte nur selektiv zu
 unterbinden, gibt es Programme, die innerhalb des Browser Webseiten auf
-auffällige Skript-Routinen untersuchen und diese blockieren \cite{Fox12}. 
+auffällige Skript-Routinen untersuchen und diese blockieren, wobei auch diese
+keinen hundertprozentigen Schutz bieten können, da das Angriffsspektrum zu groß
+ist \cite{Fox12}.
 
-%---------------------------
-% Die Maßnahmen, die clientseitig getroffen werden können, um einen Angiff mittels Cross-Site-Scripting zu verhindern, beschränken sich primär auf Vorsichtsmaßnahmen und die Sicherheitseinstellungen im genutzten Browser.
-% Die effektivste methode, um jegiche Art von Cross-Site-Scripting zu verhindern
-% ist das Blocken sämlticher Scripte von Websiten. Die Problematik hierbei ist,
-% dass damit auch sämtliche Scripte geblockt werden, die zur normalen Ausführung
-% einer Website notwendig sein können; die Nutzung des Internets ist somit nur
-% noch sehr eingeschränkt möglich. 
-% Neben der Blockierung von Script-Routinen muss beim Aktivieren von Links darauf
-% geachtet werde, welche Paramameter in der Url enthalten sind. Scripte-Elemente
-% innerhalb einer Url sind ein Indiz für einen möglichen Agriff durch
-% Cross-Site-Scripting.
-% Darüber hinaus besteht die Möglichkeit, die die Netzweraktivitäten des Clients
-% zu überwachen. Cross-Site-Scripting basierte Angriffe führen in der Regel zu
-% ungewöhnlichen Netzwerkaktivitäten in Form von Datenaustausch mit unbekannten
-% Netzwerkteilnehmern. Eine Identifikation solcher Aktivitäten ist aufgrund der
-% hohen Kommunikationsrate in der Praxis eher unzuverlässig.
