@@ -19,12 +19,12 @@ Aufbereitung einer Webseite beim Anwender nehmen, indem er eine entsprechend
 manipulierte URL bereitstellt \cite{Fox12}. So wird beispielsweise oft bei
 Fehlermeldungen, wenn eine Seite nicht aufgerufen werden konnte, die URL im Text
 angezeigt. Durch die Integration eines \texttt{<script>}-Blocks in die URL
-lassen sich externe Scripte einbinden und im aufrufenden Browser ausführen. Der
+lassen sich externe Skripte einbinden und im aufrufenden Browser ausführen. Der
 Angreifer muss nun nur noch das Opfer dazu bewegen diese manipulierte URL zu
 öffnen.
 % Vom Server "reflektiert"
 Da der Server beim Aufruf der manipulierten URL die Möglichkeit hat die
 angehängten Parameter auf schädliche Werte zu überprüfen und selbst an den
 Client ausliefert, ist diese Art als reflektiertes XSS bekannt. Im Gegensatz zum
-persistenten XSS liefert der Server die schadhaften Scripte nur beim Aufruf der
+persistenten XSS liefert der Server die schadhaften Skripte nur beim Aufruf der
 entsprechenden manipulierten URL aus \cite[276]{Kir11}.
