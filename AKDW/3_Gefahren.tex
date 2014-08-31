@@ -1,54 +1,103 @@
-% TODO: Gefahren
 %---------------------------------- 
 \section{Gefahren}
 %---------------------------------- 
-Die Gefahren, die durch XSS entstehen, sind vielfältig. Ist das Einschleusen von Schadcode 
-erfolgreich, steht in der Regel das gesamte Funktionsspektrum der jeweiligen
-Skript-Sprache zur Verfügung, das für einen Angriff genutzt werden kann.
+% Context of Trust
+Was XSS-Angriffe gefährlich macht, ist die Möglichkeit schädliche Skripte im
+sogenannten \enquote{Context of Trust}, der vertrauenswürdigen Zone einer
+Webanwendung, zu starten \cite[1771]{GANA07}.
+% Same Origin Policy
+So kann ein Angreifer unter anderem auf die Daten der Webanwendung zugreifen,
+welche eigentlich durch die \enquote{Same-Origin-Policy} vor Dritten geschützt
+sind \cite[276]{Kir11} oder mit höheren Berechtigungen Skripte ausführen.\\
 
 %---------------------------------- 
-\subsection{Programme nachladen}
+\subsection{Datendiebstahl}
 %----------------------------------
-%TODO: Drive-By-Download
-Ddadurch, dass der Schadcode clientseitig ausgeführt wird, ist es möglich durch
-diesen Programme von externen Servern nachzuladen, die weiteren Schadcode
-enthalten. Es ist also nicht notwendig, das der Nutzer aktiv einen Download
-durchführt (Drive-By-Download). Nachgeladen werden können hierüber z.B.Trojaner,
-die noch weiteren Schaden verursachen können.
+% Daten der Webanwendung
+%  Vertrauliche Informationen
+Durch den Zugriff auf die Daten der Webanwendung hat der Angreifer je nach
+Anwendung Zugang zu vertraulichen Daten. Hierzu können persönliche Daten oder
+Firmengeheimnisse gehören (z.B. beim Angriff über einen Webmailer).
+%  Session- & Identitätsdiebstahl
+Zu den sensiblen Daten von Webanwendungen gehören die Sitzungsinformationen.
+Mithilfe dieser kann ein Angreifer eine Sitzung und somit im weiteren Schritt
+die Identität der Opfers übernehmen.
+% Tracken
+Desweiteren können durch ein Skript sämtliche Eingaben im Browser mitgelesen
+werden.
+
 %---------------------------------- 
-\subsection{Informationsdiebstahl}
-%---------------------------------- 
-%TODO: Informationsdiebastahl
-Die Möglichkeit Informationen zu stehlen sind vielfältig. Neben der Öffnung
-eines Dialogs, der den Nutzer auffordert, sich durch vertrauliche Informationen
-erneut zu identifizieren, kann auch direkt im Kontext der Anwendung auf
-Session-Informationen zugegriffen werden, was wiederum die Möglichkeit eines
-Identitätsdiebstahls ermöglicht. Eine weiter Möglichkeit, Informationen zu
-steheln ist das Tracken sämtlich Nutzereingaben und das Senden dieser an einen
-externen Server. Die so angegriffenen Informationen können vertraulichen Inhalt
-wie Firmengeheimnisse und auch Login-Daten beinhalten 
-%---------------------------------- 
-\subsection{Verbreitung von Fehlinformationen}
+\subsection{Manipulation von Darstellung oder Information}
 %----------------------------------
-%TODO: Fehlinformationen
-Mit Hilfe von Skripten ist es möglich, eigene Texte auf einer fremden Webseite
-einzubinden. Das Angriffsziel hierbei ist weiterhin der Client, indem dieser
-falsche Informationen erhält, allerdings kann es auch dazu genutzt werden, dem
-Betreiber des Webservers zu schaden, da die Fehlinformation durch seinen
-Auftritt verbreitet wird und als Unternehmensaussage interpretiert werden kann.
+% Falsche Informationen
+Eine weitere Gefahr stellt die Manupulation von Darstellung oder Information auf
+Webseiten dar. So lassen sich Inhalte verändern oder ersetzen, sodass im Browser
+des Anwenders falsche Informationen angezeigt werden. Diese Art des Angriffs
+schadet zudem dem Webseitenbetreiber, da die gelieferten Informationen ihm
+zugeordnet werden (z.B. Imageschäden für Unternehemen).
+% Werbung
+Eine verbreitete Form dieses Angriffs stellt das Platzieren von zusätzlicher
+Werbung auf einer Webseite dar.
+% Benutzerdaten und Passwörter
+%  "Bitte erneut authentifizieren"
+Ebenso verbreitet und mit hohem Gefahrenpotential ist die Einblendung neuer
+Dialoge, beispielsweise einem zur erneuten Authentifizierung. Die eingegebenen
+Daten kann der Angreifer abgreifen, während der Anwender in den meisten Fällen
+keinen Verdacht schöpft.
 
+%---------------------------------- 
+\subsection{Dive-By-Downloads}
+%----------------------------------
+% Guter Einsteigspunkt
+%  Durch Webseitenaufruf Code auf lokalem Rechner ausführbar
+%  Dive-By-Download
+In vielen Fällen ist ein XSS-Angriff auch nur als Türöffner Teil eines
+komplexeren Angriffs. Durch die Möglichkeit allein durch den Aufruf einer
+Webseite Code lokal auszuführen eignet sich XSS optimal für Drive-By-Downloads.
+% Sicherheitslücken
+Oft in Verbindung mit der Ausnutzung von Sicherheitslücken des Browsers können
+so Viren oder Trojaner auf den Rechner des Anwenders geschleust und weiterer
+Schaden verursacht werden.
 
-% Beispiele
-%
-% PayPal
-%  http://www.heise.de/security/meldung/PayPal-wieder-durch-Cross-Site-Scripting-angreifbar-1869515.html
-% Facebook
-%  http://www.heise.de/security/meldung/Facebook-schliesst-Cross-Site-Scripting-Luecken-1845343.html
-% Bundesregierung
-%  http://www.spiegel.de/netzwelt/tech/angeblicher-merkel-ruecktritt-luecke-in-website-der-bundesregierung-a-435128.html
-% Online-Banking
-%  http://www.spiegel.de/netzwelt/web/online-banking-16-jaehriger-findet-17-banken-sicherheitsluecken-a-722049.html
-% Ebay
-%  http://www.spiegel.de/netzwelt/web/ebay-passwortwechsel-nach-hackerangriff-weitere-sicherheitsprobleme-a-971661.html
-% Google
-%  http://shiflett.org/blog/2005/dec/googles-xss-vulnerability
+%---------------------------------- 
+\subsection{Beispiele}
+%----------------------------------
+% Beispiele / Relevanz
+XSS-Angriffe sind in der Praxis weit verbreitet. Besonders Online-Banken
+(Datendiebstahl) und soziale Netzwerke (Identitätsübernahme) geraten oft ins
+Fadenkreuz der Angreifer, da hier besonders sensible Daten abgegriffen werden
+können. In der Vergangenheit waren unter anderem Paypal \cite{Kug13}, Ebay
+\cite{Boc14}, Facebook \cite{Gol13}, Google \cite{Shi05}, die Webpräsenz der
+Bundesregierung \cite{Dam06} und verschiedene Online-Banken \cite{Sto10}
+betroffen.
+
+% ###
+
+% %---------------------------------- 
+% \subsection{Programme nachladen}
+% %----------------------------------
+% % Teil eines Angriffs
+% Ddadurch, dass der Schadcode clientseitig ausgeführt wird, ist es möglich durch
+% diesen Programme von externen Servern nachzuladen, die weiteren Schadcode
+% enthalten. Es ist also nicht notwendig, das der Nutzer aktiv einen Download
+% durchführt (Drive-By-Download). Nachgeladen werden können hierüber z.B.Trojaner,
+% die noch weiteren Schaden verursachen können.
+% %---------------------------------- 
+% \subsection{Informationsdiebstahl}
+% %---------------------------------- s
+% Die Möglichkeit Informationen zu stehlen sind vielfältig. Neben der Öffnung
+% eines Dialogs, der den Nutzer auffordert, sich durch vertrauliche Informationen
+% erneut zu identifizieren, kann auch direkt im Kontext der Anwendung auf
+% Session-Informationen zugegriffen werden, was wiederum die Möglichkeit eines
+% Identitätsdiebstahls ermöglicht. Eine weiter Möglichkeit, Informationen zu
+% steheln ist das Tracken sämtlich Nutzereingaben und das Senden dieser an einen
+% externen Server. Die so angegriffenen Informationen können vertraulichen Inhalt
+% wie Firmengeheimnisse und auch Login-Daten beinhalten 
+% %---------------------------------- 
+% \subsection{Verbreitung von Fehlinformationen}
+% %----------------------------------
+% Mit Hilfe von Skripten ist es möglich, eigene Texte auf einer fremden Webseite
+% einzubinden. Das Angriffsziel hierbei ist weiterhin der Client, indem dieser
+% falsche Informationen erhält, allerdings kann es auch dazu genutzt werden, dem
+% Betreiber des Webservers zu schaden, da die Fehlinformation durch seinen
+% Auftritt verbreitet wird und als Unternehmensaussage interpretiert werden kann.
