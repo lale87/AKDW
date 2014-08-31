@@ -1,28 +1,29 @@
 %---------------------------------- 
 \subsection{Schutzmaßnahmen -- Client}
 %---------------------------------- 
-Clientseitige Schutzmaßnahmen müssen im Idealfall nicht ergriffen werden, da
-alle Schwachstellen durch den Server ausgeliefert und dadurch auch durch diesen
-vermieden werden müssen. Selbst das DOM-Basierte XSS nutzt Schwachstellen in dem
-vom Server ausgelieferten Script, um einen Angriff durchzuführen.
+Clientseitige Schutzmaßnahmen müssen ergriffen werden, da nicht zwangsläufig
+alle Schwachstellen serverseitig behoben werden und dadurch an den Client
+ausgeliefert werden können. 
+% Alle Angriffe nutzen diese Schwachstellen aus, so
+% werden auch beim DOM-Basierte XSS die Schwachstellen in dem vom
+% Server ausgelieferten Script ausgenutzt, um einen Angriff durchzuführen.
 Schutzmaßnahmen können sowohl darauf abzielen, das Einbinden des Scripts oder
 auch das Ausführen des Scripts zu unterbinden. Das Einbinden von Schadcode lässt
-sich clientseitig nur bei refklektiertem und DOM-Basiertem XSS verhindern.
-Da die Angriffe hierbei durch eine manipulierte Url durchgeführt werden, lässt
-sich clientseitig die Url auf ungewöhnliche Script-Elemente überprüfen. Um die
-Anfälligkeit für manipulierte Links zu minimieren wird Häufig die Empfehlung
-gegeben, Links nur von bekannten und vertrauenswürdigen Seiten zu verwenden.
-Diese Empfehlung ist allerdings bei XSS nur bedingt gültig, da die angezeigten
-Links auf der vermeintlich vertrauenswürdigen Webseite durch persistentes XSS
-manipuliert sein können.
+sich clientseitig nur bei refklektiertem und DOM-Basiertem XSS verhindern, da
+bei persistentem XSS der Schadcode ohne Beteiligung des Clients zuvor
+eingebunden wurde \cite[1772ff]{GANA07}.
+Bei den erstgenannten Methoden wird er Angriff durch eine manipulierte Url
+durchgeführt, sodass diese clientseitig auf ungewöhnliche Script-Elemente
+überprüft werden kann.
+
 Der effektivste Schutzt gegen XSS ist clientseitig das Unterbinden von Script.
-Das Grundsätzliche Blocken aller Script-Routinen ist hierbei das sicherste
+Das grundsätzliche Blocken aller Script-Routinen ist hierbei das sicherste
 Element im schutz gegen XSS. Da heutzutage allerdings viele Funktionaliäten im
 Internet durch Script-Routinen erst möglich werden, führt ein grundsätzliches
 Blocken der Inhalte dazu, dass viele Webseiten im Internet für die Nutzer nur
-noch sehr eingeschränkt nutzbar sind. Ein weitere Möglichkeit, ist das
-Unterbinden von In-Line JavaScript. Da der Schadcode direkt als Script-Element
-in die Webseite eingebettet werden\ldots
+noch sehr eingeschränkt nutzbar sind \cite{Fox12}. Um Scripte nur selektiv zu
+unterbinden, gibt es Programme, die innerhalb des Browser Webseiten auf
+auffällige Script-Routinen untersuchen und diese blockieren \cite{Fox12}. 
 
 %---------------------------
 % Die Maßnahmen, die clientseitig getroffen werden können, um einen Angiff mittels Cross-Site-Scripting zu verhindern, beschränken sich primär auf Vorsichtsmaßnahmen und die Sicherheitseinstellungen im genutzten Browser.
