@@ -5,31 +5,38 @@
 Die Gefahren, die durch XSS entstehen, sind vielfältig. Ist das Einschleusen von Schadcode 
 erfolgreich, steht in der Regel das gesamte Funktionsspektrum der jeweiligen
 Skript-Sprache zur Verfügung, das für einen Angriff genutzt werden kann.
-% Nachfolgend aufgelistet finden sich lediglich einige wenige Angriffsszenarien, die sich mit Hilfe von XSS umsetzen lassen.
 
 %---------------------------------- 
-\subsection{Cookie Harvesting}
-%---------------------------------- 
-Dadurch, dass das Script Clientseitig ausgeführt wird, ist es möglich auf die lokalen 
-Dateien zuzugreifen und diese zu kopieren und über das Netzwerk (ggf. Internet) zu übertragen. 
-Auf diese Art und Weise ist es möglich, durch ein Skript Cookies zu stehlen. Die Cookies werden 
-hierbei an den Angreifer übertragen und dieser erhält somit im schlechtesten Fall alle aktiven 
-Logins des Opfers.
+\subsection{Programme nachladen}
+%----------------------------------
+%TODO: Drive-By-Download
+Ddadurch, dass der Schadcode clientseitig ausgeführt wird, ist es möglich durch
+diesen Programme von externen Servern nachzuladen, die weiteren Schadcode
+enthalten. Es ist also nicht notwendig, das der Nutzer aktiv einen Download
+durchführt (Drive-By-Download). Nachgeladen werden können hierüber z.B.Trojaner,
+die noch weiteren Schaden verursachen können.
 %---------------------------------- 
 \subsection{Informationsdiebstahl}
 %---------------------------------- 
-Die Erzeugung eines Eingabefensters kann dafür genutzt werden, (vertrauliche) Information vom 
-Opfer zu bekommen. Ein Angriffsszenario hierbei ist das Abfragen der Login-Daten mit dem Hinweis, 
-dass die Session abgelaufen ist und man sich erneut anmelden müsse.  
+%TODO: Informationsdiebastahl
+Die Möglichkeit Informationen zu stehlen sind vielfältig. Neben der Öffnung
+eines Dialogs, der den Nutzer auffordert, sich durch vertrauliche Informationen
+erneut zu identifizieren, kann auch direkt im Kontext der Anwendung auf
+Session-Informationen zugegriffen werden, was wiederum die Möglichkeit eines
+Identitätsdiebstahls ermöglicht. Eine weiter Möglichkeit, Informationen zu
+steheln ist das Tracken sämtlich Nutzereingaben und das Senden dieser an einen
+externen Server. Die so angegriffenen Informationen können vertraulichen Inhalt
+wie Firmengeheimnisse und auch Login-Daten beinhalten 
 %---------------------------------- 
-\subsection{Key-Logger}
+\subsection{Verbreitung von Fehlinformationen}
 %----------------------------------
-Es ist möglich mit Hilfe eines Scripts die Eingabe der Tastatur zu loggen und an den Angreifer zu übertragen. 
-Auf diese Weise können Zugangsdaten abgegriffen werden.
-%---------------------------------- 
-\subsection{Weiteres Beispiel}
-%----------------------------------
-Hier könnte noch ein Beispiel kommen\ldots
+%TODO: Fehlinformationen
+Mit Hilfe von Skripten ist es möglich, eigene Texte auf einer fremden Webseite
+einzubinden. Das Angriffsziel hierbei ist weiterhin der Client, indem dieser
+falsche Informationen erhält, allerdings kann es auch dazu genutzt werden, dem
+Betreiber des Webservers zu schaden, da die Fehlinformation durch seinen
+Auftritt verbreitet wird und als Unternehmensaussage interpretiert werden kann.
+
 
 % Beispiele
 %
