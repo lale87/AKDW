@@ -3,8 +3,8 @@ Cross-Site-Scripting, auch als XSS bekannt, beruht darauf, dass eine dynamisch
 generierte Webseite Benutzereingaben nicht korrekt validiert und darstellt.
 Der Angreifer versucht auf diese Weise ein eigenes Skript in die Webseite
 einzubinden, welches beim Anwender ausgeführt wird. Da dieses nun im Kontext
-einer vermeintlich sicheren Webseite ausgeführt wird, kann der Angreifer
-meistens auf sensible Daten der Webanwendung zugreifen \cite[1771]{GANA07}.\\
+einer vermeintlich sicheren Webseite gestartet wird, kann der Angreifer
+auf sensible Daten der Webanwendung zugreifen \cite[1771]{GANA07}.\\
 % Definition
 Das Bundesamt für Sicherheit in der Informationstechnik definiert XSS
 folgendermaßen:\\
@@ -15,8 +15,8 @@ Browser-seitig ausführbare Skripte, wie z. B. JavaScript) an den Client des
 Benutzers der Webanwendung zu senden.}} \cite{fSidI13}\\
 % Ziel und Abgrenzung
 Ziel eines solchen Angriffs, in Abgrenzung zur SQL-Injection, ist nicht die
-Webanwendung selbst, sondern der Anwender \cite{Fox12}. In diesem Papier wird
-als Beispiel JavaScript herangezogen, welches bei XSS-Angriffen am häufigsten
-zum Einsatz kommt. Zu beachten ist jedoch, dass grundsätzlich jede vom Browser
-ausführbare Markup- oder Skriptsprache (HTML, CSS, Flash, ActiveX, etc.) genutzt
-werden kann.
+Webanwendung selbst, sondern der Anwender \cite{Fox12}.\\
+In diesem Papier wird als Beispiel JavaScript herangezogen, welches bei
+XSS-Angriffen am häufigsten zum Einsatz kommt. Zu beachten ist jedoch, dass
+grundsätzlich jede vom Browser ausführbare Markup- oder Skriptsprache (HTML,
+CSS, Flash, ActiveX, etc.) genutzt werden kann.

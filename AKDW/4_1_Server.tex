@@ -9,18 +9,18 @@ spielt also eine wichtige Rolle \cite[272]{SS06}. Aufgrund ihrer Funktionsweise
 lassen sich keine Eingaben durch DOM-basiertes XSS serverseitig überprüfen.
 % Filter-Proxy
 Eine zentrale Möglichkeit stellen Filter-Proxies dar. Diese scannen ein- und
-ausgehende Datenströme auf entsprechenden Schadcode anhand von Heuristiken
-\cite[1776ff.]{GANA07} \cite{Fox12}.
+ausgehende Datenströme anhand von Signaturen und Heuristiken auf Schadcode
+und filtern diesen \cite[1776ff.]{GANA07} \cite{Fox12}.
 % Problem & DOM-XSS
 Grundproblem dieser Maßnahmen ist, dass der Angreifer nur eine Lücke im
 Schutzsystem finden muss, während der Betreiber alle Möglichkeiten zu
 berücksichtigen hat.\\
 % Content-Security-Policy
-Eine relative junge Entwicklung ist das setzen des
+Eine relative junge Entwicklung ist das Setzen des
 Content-Security-Policy-Headers (CSP). Dieser wird mittlerweile von allen
 gängigen Browsern unterstützt und kann XSS-Angriffe effektiv verhindern. In
-diesem Header lassen sich vertrauenswürdige Ort von Inhalten festlegen. Indem
+diesem Header lassen sich vertrauenswürdige Orte von Inhalten festlegen. Indem
 eigene Skripte vollständig in externe Dateien ausgelagert werden, lassen sich
-Inline-Skripte komplett verbieten und nachgeladene Skripte auf Orte der eigenen
-Domain beschränken. Umsetzen muss die Regeln der Browser des Anwenders
-\cite{SB12} \cite[1780ff.]{GANA07}.
+Inline-Skripte komplett verbieten und nachgeladene auf Orte der eigenen Domain
+beschränken. Umsetzen muss die Regeln der Browser des Anwenders \cite{SB12}
+\cite[1780ff.]{GANA07}.
