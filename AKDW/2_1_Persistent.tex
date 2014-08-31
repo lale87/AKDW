@@ -1,16 +1,18 @@
 %---------------------------------- 
 \subsection{Persistent}
 %---------------------------------- 
-Persistentes XSS zielt darauf ab, Schadcode in Form einer Scruipt-Routine
-dauerhaft auf einem Webserver zu speichern, sodass der Schadcode an jeden Nutzer
-ausgeliefert wird, der die Infizierte Seite besucht.
+Persistentes XSS zielt darauf ab, Schadcode in Form einer Script-Routine
+dauerhaft auf einem Webserver zu speichern.
+% , sodass der Schadcode an jeden
+% Nutzer ausgeliefert wird, der die Infizierte Seite besucht\cite{Fox12}.
 Um den Schadcode auf den Server zu übertragen werden Schnittstellen benutzt, die
 es einem Nutzer erlauben, eigene Eingaben an einen Server zu senden, die in der
-späteren Darstelleung einer Webseite genutzt werden. Der hier eingebene Text,
+späteren Darstellung einer Webseite genutzt werden. Der hier eingebene Text,
 wie er z.B. in Diskussionforen häufig vorkommt, kann neben dem eigentlichen Text
-um Script-Elemente erweitert werden, die dem Text angehängt werden.
-Werden die übertragenen Eingabedaten nicht gefiltert, so wird der Schadcode
-dauerhaft in die Seite eingebettet.
+um Script-Elemente erweitert werden, die dem Text angehängt
+werden \cite{fSidI13}. Werden die übertragenen Eingabedaten nicht gefiltert, so
+wird der Schadcode dauerhaft in die Seite eingebettet.
 Jeder Besucher der so infizierten Webseite bekommt vom vermeintlich sicheren
 Server nun den Schadcode ausgeliefert, der vom Browser des Nutzers interprätiert
-und ausgeführt wird, sofern dies nicht speziell vom Client unterbunden wird.
+und ausgeführt wird, sofern dies nicht speziell vom Client unterbunden
+wird \cite[1772]{GANA07}.
